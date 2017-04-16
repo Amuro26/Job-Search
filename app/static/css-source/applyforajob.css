@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+
+#apply, .title {
+	margin-left: 12%;
+	background-color: white;
+}
+.title {
+	font-size: 32px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+#apply {
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+#notice {
+	font-size: 18px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.subtitle {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.subtitle > p {
+	font-size: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 40px;
+	font-weight: 500;
+	border-bottom: #6BE375 3px solid;
+	background: #F0F0F0;
+}
+.subtitle > div {
+	padding-left: 20px;
+	line-height: 28px;
+	vertical-align: middle;
+	border-left: #6BE375 3px solid;
+}
+.subtitle > div:nth-child(2n) {
+	background-color: #E4F3FF;
+}
+form > button, form > a {
+	color:#555 !important;
+	border: #bbb 1px solid !important;
+}
+#resume {
+	margin-bottom: 20px;
+}
+form > button:hover, form > a:hover {
+	transition: 0.2s !important;
+	background-color:darkgrey !important;
+	color:#eee !important;
+}
+form > button:active, form > a:active {
+	transition: 0s !important;
+	background-color: darkgray !important;
+}

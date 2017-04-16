@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}发布新职位{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/newjob.css" rel="stylesheet" type="text/css">  <!--新增、修改招聘信息css文件-->
+{% endblock %}
+
+
+{% block classtitle %}
+	<!--logo、搜索框-->
+    {% if current_user.logo %}
+	<section class="col-sm-9 title">
+		<img src="{{ current_user.logo }}" height="60"/>
+		<div>{{ current_user.company_name }}</div>
+	</section>
+    {% else %}
+    <section class="col-sm-9 title">
+		<img src="{{ current_user.avatar }}" height="60"/>
+		<div>{{ current_user.username }}</div>
+	</section>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+
+
+	<!--主界面-->
+	<section id="main" class="col-sm-12">
+		<div class="col-sm-7">
+			<form action="{{ url_for('newjob') }}" method="post">
+				{{ form.hidden_tag() }}
+                <div>
+					<span>公司名称：</span>
+					{{ form.company_name }}
+				</div>
+                <div>
+					<span>所属行业：</span>
+					{{ form.industry }}
+				</div>
+				<div>
+					<span>岗位名称：</span>
+					{{ form.job_name }}
+				</div>
+				<div>
+					<span>每月薪酬：</span>
+					{{ form.salary }}
+				</div>
+                <div>
+					<span>工作地点：</span>
+					{{ form.work_place(type="text") }}
+				</div>
+				<div>
+					<span>要求：</span>
+					{{ form.requirement(type="text") }}
+				</div>
+
+				<div>
+					<span>福利待遇：</span>
+					{{ form.welfare(type="text") }}
+				</div>
+				<div>
+					<span>岗位介绍：</span>
+					{{ form.job_detail }}
+				</div>
+				<div>
+					<span>其他补充信息：</span>
+					{{ form.PS(type="text") }}
+				</div>
+                <div>
+					<span>联系邮箱： {{ form.email(type="text") }}</span>
+					<span>{{ form.submit }} </span>
+                    <span><input type="reset" value="重置"></span>
+				</div>
+                <div style="height: 50px"></div>
+			</form>
+		</div>
+	</section>
+{% endblock %}
+
+
+{% block height %}799{% endblock %}

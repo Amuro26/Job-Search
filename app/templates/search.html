@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ key_words }} - 搜索{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/search.css" rel="stylesheet" type="text/css">  <!--搜索页面css文件-->
+{% endblock %}
+
+
+
+{% block content %}
+	<!--查找选项-->
+	<section class="col-sm-9" id="search-option">
+		<h3>您查找的关键词是  "{{ query }}".</h3>
+		<!--<form>
+			<div id="select" class="col-sm-12">
+				<span>筛选：</span>
+				<div>
+					<span>行业</span>
+					<input type="text" list="industry">
+					<datalist id="industry">
+
+					</datalist>
+				</div>
+				<div>
+					<span>公司性质</span>
+					<input type="text" list="type">
+					<datalist id="type">
+
+					</datalist>
+				</div>
+				<div>
+					<span>月薪</span>
+					<input type="text" list="salary">
+					<datalist id="salary">
+
+					</datalist>
+				</div>
+				<div>
+					<span>位置</span>
+					<input type="text" list="location">
+					<datalist id="location">
+
+					</datalist>
+				</div>
+			</div>
+			<div id="sort" class="col-sm-12">
+				<span>排序：</span>
+				<input type="radio" name="sort1">发布时间
+				<input type="radio" name="sort2">学历要求
+				<input type="radio" name="sort3">工作年限
+			</div>
+			<input type="submit" value="提交">
+			
+		</form>-->
+	</section>
+	
+	<!--查找结果-->
+	<section id="result" class="col-sm-9">
+        <div class="detail col-sm-12">
+                    <div class="col-sm-4 text-center">
+                        <p>工作岗位和工作地点</p>
+
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <p>每月薪酬</p>
+                    </div>
+                    <div class="col-sm-5 text-center">
+                        <p>委托人要求</p>
+                    </div>
+
+            </div>
+	{% for job in results %}
+		<div class="detail col-sm-12">
+			<a href="/job_detail/{{ job.id }}">
+				<div class="col-sm-4 text-center">
+					<p>{{ job.job_name }}</p>
+					<p>{{ job.company_name }}</p>
+				</div>
+				<div class="col-sm-3 text-center">
+					<p>{{ job.salary }}</p>
+				</div>
+				<div class="col-sm-5 text-center">
+					<p>{{ job.requirement }}</p>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+	</section>
+{% endblock %}
+
+{% block height %}495 + $("#result").css("height"){% endblock %}

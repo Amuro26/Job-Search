@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* CSS Document */
+
+.title {
+	margin: 0 12%;
+	background-color: white;
+}
+.title {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+.title > img {
+	float: left;
+	margin-top: 10px;
+}
+.title > form {
+	position: relative;
+	top: 30px;
+}
+.title > form > input:nth-child(1) {
+	height: 40px;
+	width: 400px;
+	margin-right: 25px;
+	margin-left: 70px;
+}
+.title > form > input:nth-child(2) {
+	transition: 0.5s;
+	height:40px;
+	width:76px;
+	font-size:15px;
+	color:#555;
+	border: #bbb 1px solid;
+}
+.title > form > input:nth-child(2):hover {
+	transition: 0.5s;
+	background-color:darkgrey;
+	color:#eee;
+}
+.title > form > input:nth-child(2):active {
+	transition: 0s;
+	background-color: darkgray;
+}
+
+#search-option, #result{
+	margin-left:12%;
+}
+#select > div{
+	width:22.7%;
+	float:right;
+}
+#select > div:nth-child(3) {
+	width:26%;
+}
+#select > span {
+	line-height: inherit;
+	vertical-align: middle;
+}
+#search-option, #result {
+	background-color: white;
+}
+#search-option {
+	margin-top: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+}
+#search-option > p {
+	font-size: 16px;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: #6BE375 3px solid;
+}
+form > div {
+	position: relative;
+	top: 6px;
+	width: 280px;
+	float: left;
+	padding-left: 5px;
+}
+form > button {
+	transition: 0.5s;
+	color:#555 !important;
+	border: #bbb 1px solid !important;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+form > button:hover {
+	transition: 0.5s;
+	background-color:darkgrey !important;
+	color:#eee !important;
+}
+form > button:active {
+	transition: 0s !important;
+	background-color: darkgray !important;
+}
+#result {
+	padding-top: 30px;
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+.detail {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+	border-bottom: #AAAAAA 1px solid;
+}
+.detail:nth-child(1) {
+	border-top: #AAAAAA 1px solid;
+}
+.detail:hover {
+	background-color: #DDDDDD !important;
+}
+.detail:nth-child(2n) {
+	background-color: #E4F3FF;
+}
+.detail > a, .detail > a:hover {
+	color: #333;
+}
+.detail > a > div:nth-child(2) {
+	color: red;
+	font-weight: bold;
+}

@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+
+{% block title %}注册{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/register.css" rel="stylesheet" type="text/css">  <!--注册页面css文件-->
+{% endblock %}
+
+
+{% block header %}
+<!--头部返回主页-->
+	<header class="container-fluid"> 
+		<div>
+			<a href="{{ url_for('home') }}"><span>返回主页</span></a>
+		</div>
+	</header>
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+{% block content %}
+<!--个人注册对话框-->
+	<section class="col-sm-6 col-sm-offset-3" id="register">
+		<div class="col-sm-8 col-sm-offset-2" id="choose-register">
+			<a class="btn btn-link col-sm-4 col-sm-offset-2 text-center">
+				<div class="on" id="type1">求职者注册</div>
+			</a>
+			<a class="btn btn-link col-sm-4 text-center">
+				<div class="off" id="type2">企业用户注册</div>
+			</a>
+		</div>
+		<div class="col-sm-offset-3" id="1register" style="display: block">
+			<form id="form1" action="{{ url_for('register') }}" method="post">
+				{{ user_form.hidden_tag() }}
+				<div class="container-fluid">
+					<span>用户名：</span>
+					{{ user_form.username(type="text") }}
+				</div>
+                <div class="container-fluid">
+					<span>年龄：</span>
+					{{ user_form.age() }}
+				</div>
+				<div class="container-fluid">
+					<span>手机：</span>
+					{{ user_form.phone() }}
+				</div>
+				<div class="container-fluid">
+					<span>邮箱：</span>
+					{{ user_form.email(type="email") }}
+				</div>
+				<div class="container-fluid">
+					<span>密码：</span>
+					{{ user_form.password(type="password") }}
+				</div>
+				<div class="container-fluid">
+					<span>确认密码：</span>
+					{{ user_form.re_password(type="password") }}
+				</div>
+				<!--<div class="container-fluid">
+					<span>验证码：</span>
+					<input type="text" name="1-check">
+				</div>-->
+				<div class="col-sm-8 col-sm-offset-2">
+					{{ user_form.submit(class='btn btn-default') }}
+					<button type="reset" class="btn btn-default">重置</button>
+				</div>
+				
+			</form>
+		</div>
+<!--企业注册对话框-->
+		<div class="col-sm-offset-3" id="2register" style="display: none">
+		  	<form id="form2" action="{{ url_for('register') }}" method="post">
+		  	{{ company_form.hidden_tag() }}
+			  <p>公司信息</p>
+				<div class="container-fluid">
+					<span>公司名称：</span>
+				  	{{ company_form.company_name(type="text") }}
+				</div>
+				<div class="container-fluid">
+					<span>所在地：</span>
+				 	{{ company_form.address(type="text") }}
+				</div>
+				<div class="container-fluid">
+					<span>联系人：</span>
+				  	{{ company_form.contact(type="text") }}
+				</div>
+				<div class="container-fluid">
+					<span>联系电话：</span>
+				  	{{ company_form.telephone() }}
+				</div>
+			  <p>账号信息</p>
+				<div class="container-fluid">
+					<span>用户名：</span>
+				  	{{ company_form.username(type="text") }}
+				</div>
+			  	<div class="container-fluid">
+					<span>邮箱：</span>
+			    	{{ company_form.email(type="email") }}
+				</div>
+				<div class="container-fluid">
+					<span>密码：</span>
+					{{ company_form.password(type="password") }}
+				</div>
+                <div class="container-fluid">
+					<span>确认密码：</span>
+					{{ company_form.re_password(type="password") }}
+				</div>
+				<!--<div class="container-fluid">
+					<span>确认密码：</span>
+				  	<input type="password" name="2-re-pw">
+				</div>-->
+				<!--<div class="container-fluid">
+					<span>验证码：</span>
+					<input type="text" name="2-check">
+				</div>-->
+				<div class="col-sm-8 col-sm-offset-2">
+					{{ company_form.submit(class='btn btn-default') }}
+					<button type="reset" class="btn btn-default">重置</button>
+				</div>
+				
+			</form>
+		</div>
+		<img id="bg" src="../static/image-source/register/bg.png" width="280" />
+	</section>
+{% endblock %}
+
+
+{% block script %}
+$("#type2").on("click",function(){
+	$("#type1").addClass("off").removeClass("on");
+	$("#type2").addClass("on").removeClass("off");
+	$("#1register").hide();
+	$("#2register").show();
+})
+$("#type1").on("click",function(){
+	$("#type2").addClass("off").removeClass("on");
+	$("#type1").addClass("on").removeClass("off");
+	$("#2register").hide();
+	$("#1register").show();
+})
+{% endblock %}
+
+{% block height_control %}
+var winHeight = 0;
+	function findDimensions() {
+		if (window.innerHeight)
+		winHeight = window.innerHeight;
+		else if ((document.body) && (document.body.clientHeight))
+		winHeight = document.body.clientHeight;
+		if (document.documentElement && document.documentElement.clientHeight) {
+			winHeight = document.documentElement.clientHeight;
+		}
+	}
+	findDimensions();
+	window.onresize = findDimensions;
+	var footerHeight = $("footer").css("height");
+	$(document).ready(function(){
+		if (winHeight > 702)
+			$("footer").css({"position": "fixed", "width": "100%", "bottom": "0px"});
+			$("#bg").css({"position": "fixed", "bottom": footerHeight, "left": "200px"});
+	})
+{% endblock %}

@@ -1,0 +1,238 @@
+@charset "utf-8";
+/* CSS Document */
+
+.title {
+	font-size: 32px;
+	margin-top: 50px !important;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 50px;
+	vertical-align: middle;
+	background-color: #FFFFFF;
+}
+.title > img {
+	float: left;
+	margin-top: 10px;
+}
+.title > form {
+	position: relative;
+	top: 30px;
+}
+.title > form > input:nth-child(1) {
+	height: 40px;
+	width: 400px;
+	margin-right: 25px;
+	margin-left: 70px;
+}
+.title > form > input:nth-child(2) {
+	transition: 0.5s;
+	height:40px;
+	width:76px;
+	font-size:15px;
+	color:#555;
+	border: #bbb 1px solid;
+	position: relative;
+	bottom: 10px;
+}
+.title > form > input:nth-child(2):hover {
+	transition: 0.5s;
+	background-color:darkgrey;
+	color:#eee;
+}
+.title > form > input:nth-child(2):active {
+	transition: 0s;
+	background-color: darkgray;
+}
+#navbar {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border: grey 1px solid;
+}
+#navbar > div {
+	margin-top:4px;
+	margin-bottom:4px;
+}
+#navbar > div > a {
+	color: #555555;
+}
+#navbar > div > a:hover {
+	color: #000000;
+}
+.data {
+	clear:both;
+	background-color: #FFFFFF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top:30px !important;
+	margin-bottom:30px !important;
+}
+.data > div:nth-child(1) {
+	margin-bottom: 25px;
+	border-bottom: #6BE375 2px solid;
+}
+.data > div > p {
+	margin-left: 7%;
+	font-size: 28px;
+	color: #333333;
+	margin-bottom: 3px;
+}
+.container{
+	width:60%;
+	margin: 0 auto;
+}
+.container > div dd {
+	text-align: center;
+	float: none;
+	width: 100%;
+	clear: both;
+}
+#category > div > div.col-sm-2{
+	margin-left: 10%;
+}
+.col-sm-9 {
+	margin:0 12%;
+}
+#navbar {
+	position: fixed;
+	right:0px;
+	top:40%;
+}
+#recommend dl > div, #hot dl > div, #category dl > div {
+	float:left;
+	margin-top:40px;
+	margin-bottom: 40px;
+	font-size: 20px;
+}
+#recommend dt, #hot dt, #category dt {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+}
+#recommend dt > div, #hot dt > div, #category dt > div {
+	width:100px;
+	margin:0 auto;
+}
+#recommend dd, #hot dd, #category dd {
+	padding-bottom: 10px;
+	color: red;
+	font-size: 24px;
+}
+#recommend > section > a, #hot > section > a, #category > section > a, category > section > a {
+	transition: 0.3s;
+	/*background-color: #F5F5F5;*/
+	color: #333333;
+}
+#recommend > section > a:hover, #hot > section > a:hover, #category > section > a:hover {
+	transition: 0.3s;
+	background-color:#D0F9E4;
+}
+a, a:hover {
+	text-decoration: none !important;
+}
+dl {
+	background-color: inherit;
+}
+#recommend > section > a > div, #hot > section > a > div, #category > section > a > div {
+	background-color: inherit;
+}
+.detail {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+#category > div:nth-child(2) {
+	margin-top: 10px !important;
+}
+.detail > .col-sm-3 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.title {
+	font-size: 22px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.sub {
+	font-size: 18px;
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
+}
+.more > div {
+	float: left;
+	margin-top: 15px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 30px;
+	vertical-align: middle;
+}
+.detail > div > a > div{
+	transition: 0.3s;
+	background-color: #FFFFFF;
+}
+.detail > div > a > div:hover {
+	transition: 0.3s;
+	background-color: #EEEEEE;
+}
+.more > div{
+	color: #888888 !important;
+}
+.more > div:hover{
+	color: #000000 !important;
+	transition: 0 !important;
+	background-color: #FFFFFF !important;
+}
+.detail > div.col-sm-8 {
+	border-left: #BCFDB2 2px solid;
+	width: 75% !important;
+}
+.detail > div.col-sm-8 > a > div {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #333333;
+}
+.detail > div.col-sm-8 img {
+	float: left;
+}
+.detail > div.col-sm-8 dl .col-sm-6 {
+	float: left;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 20px;
+}
+.detail > div.col-sm-8 > a > .col-sm-6 {
+	transition: 0.3s;
+	/*background-color: #F5F5F5;*/
+}
+.detail > div.col-sm-8 > a >.col-sm-6:hover {
+	transition: 0.3s;
+	background-color: #D0F9E4;
+}
+.detail > div.col-sm-8 .col-sm-12 {
+	margin-top: 15px;
+	color: red;
+	font-size: 24px;
+}
+#morelink a {
+	color: #333;
+}
+#morelink a:hover {
+	color: #000;
+}
+#morelink {
+	padding-bottom: 30px;
+}
+#introduction {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top:10px !important;
+	margin-bottom:30px !important;
+	background-color: #FFFFFF;
+}
+
+.pagination{
+	margin-left: 33.3333%;
+}
+
+

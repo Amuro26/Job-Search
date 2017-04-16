@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}修改公司信息{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/myhome2.css" rel="stylesheet" type="text/css">  <!--公司主页css文件-->
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+
+{% block content %}
+	<!--主面板-->
+	<section class="col-sm-9" id="main">
+		<section class="col-sm-3" id="image">
+			<img src="{{ company.logo }}" width="100%"/>
+		</section>
+		<section class="col-sm-9" id="data">
+			<p id="title">我的信息</p>
+			<div id="complement">完整填写信息，更易吸引人才</div>
+			<form action="{{ url_for('myhome2') }}" method="post" enctype="multipart/form-data">
+				{{ form.hidden_tag() }}
+				<p class="subtitle">账号信息</p>
+					<div>
+						<div class="col-sm-6">
+							<span>用户名：</span>
+							<span>{{ company.username }}</span>
+						</div>
+						<div class="col-sm-6">
+							<span>修改密码：</span>
+							{{ form.password(type="password") }}
+						</div>
+                        <div class="col-sm-6">
+							<span>确认密码：</span>
+							{{ form.re_password(type="password") }}
+						</div>
+						<div class="col-sm-6">
+							<span>上传头像：</span>
+							{{ form.logo }}
+						</div>
+					</div>
+				<p class="subtitle">公司基本信息</p>
+					<div>
+						<div class="col-sm-6">
+							<span>公司名称：</span>
+							{{ form.company_name(type="text") }}
+						</div>
+						<div class="col-sm-6">
+							<span>所在地：</span>
+							{{ form.address(type="text") }}
+						</div>
+						<div class="col-sm-6">
+							<span>联系人：</span>
+							{{ form.contact(type="text") }}
+						</div>
+						<div class="col-sm-6">
+							<span>联系电话：</span>
+							{{ form.telephone(type="text") }}
+						</div>
+						<div class="col-sm-6">
+							<span>邮箱：</span>
+							{{ form.email(type="email") }}
+						</div>
+						<div class="col-sm-6">
+							<span>公司所属行业：</span>
+							{{ form.industry(type="text") }}
+						</div>
+						<div class="col-sm-6">
+							<span>成立年份：</span>
+							{{ form.found_year }}
+						</div>
+						<div class="col-sm-6">
+							<span>公司性质：</span>
+							{{ form.type }}
+						</div>
+						<div class="col-sm-12">
+							<span>公司介绍：<br /></span>
+							{{ form.introduction }}
+						</div>
+					</div>
+				{{ form.submit(class='btn btn-default') }}
+				<button type="reset" class="btn btn-default">重置</button> 
+			</form>
+		</section>
+	</section>
+{% endblock content %}
+
+{% block height_control %}{% endblock %}

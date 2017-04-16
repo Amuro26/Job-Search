@@ -1,0 +1,83 @@
+@charset "utf-8";
+/* CSS Document */
+
+#short, #main {
+	margin-left: 12%;
+	background-color: #FFFFFF;
+}
+.title {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	margin-left: 12%;
+	background-color: #FFFFFF;
+}
+.title > img {
+	float: left;
+	margin-top: 10px;
+}
+.title > form {
+	position: relative;
+	top: 30px;
+}
+.title > form > input:nth-child(1) {
+	height: 40px;
+	width: 400px;
+	margin-right: 25px;
+	margin-left: 70px;
+}
+.title > form > input:nth-child(2) {
+	transition: 0.5s;
+	height:40px;
+	width:76px;
+	font-size:15px;
+	color:#555;
+	border: #bbb 1px solid;
+}
+.title > form > input:nth-child(2):hover {
+	transition: 0.5s;
+	background-color:darkgrey;
+	color:#eee;
+}
+.title > form > input:nth-child(2):active {
+	transition: 0s;
+	background-color: darkgray;
+}
+#short {
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: #6BE375 3px solid;
+}
+#notice {
+	width:80%;
+	float:left;
+}
+#back {
+	float:right;
+}
+#back > a {
+	color: #555555;
+}
+#back > a:hover {
+	color: #000000;
+}
+#main {
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+.message-in-it {
+	border-bottom: #AAAAAA 1px solid;
+}
+.message-in-it {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.message-in-it > section:nth-child(2) {
+	float:right;
+}
+.message-in-it > section > p {
+	font-size: 22px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

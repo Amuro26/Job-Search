@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}个人信息{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/showinfo2.css" rel="stylesheet" type="text/css">  <!--个人主页css文件-->
+{% endblock %}
+
+	
+{% block content %}
+	<!--主面板-->
+	<section class="col-sm-9" id="main">
+		<section class="col-sm-3" id="image">
+			<img src="{{ company.logo }}" width="100%" />
+		</section>
+		<section class="col-sm-9" id="data">
+			<p id="title">我的信息</p>
+			<mark id="complement">完整填写信息，更易吸引人才</mark>
+			<p class="subtitle">账号信息</p>
+				<div>
+					<div>
+						<span>用户名：</span>
+						<span>{{ company.username }}</span>
+					</div>
+				</div>
+			<p class="subtitle">公司基本信息</p>
+				<div>
+					<div>
+						<span>公司名称：</span>
+						<span>{{ company.company_name }}</span>
+					</div>
+					<div>
+						<span>所在地：</span>
+						<span>{{ company.address }}</span>
+					</div>
+					<div>
+						<span>联系人：</span>
+						<span>{{ company.contact }}</span>
+					</div>
+					<div>
+						<span>联系电话：</span>
+						<span>{{ company.telephone }}</span>
+					</div>
+					<div>
+						<span>邮箱：</span>
+						<span>{{ company.email }}</span>
+					</div>
+					<div>
+						<span>公司所属行业：</span>
+						<span>{{ company.industry }}</span>
+					</div>
+					<div>
+						<span>成立年份：</span>
+						<span>{{ company.found_year }}</span>
+					</div>
+					<div>
+						<span>公司性质：</span>
+						<span>{{ company.type }}</span>
+					</div>
+					<div>
+						<span>公司介绍：</span>
+						<span>{{ company.introduction }}</span>
+					</div>
+				</div>
+				<p class="subtitle">招聘信息</p>
+				{% for job in jobs  %}
+                    {% if job %}
+                    <div class="job-data col-sm-12">
+                        <div class="col-sm-12">
+                            <div class="col-sm-4">{{ job.job_name }}</div>
+                            <div class="col-sm-3">{{ job.salary }}</div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="col-sm-6">{{ job.requirement }}</div>
+                            <div class="col-sm-6">{{ job.welfare }}</div>
+                        </div>
+                        <div class="col-sm-12">
+                            <span>职位介绍：<br /></span>
+                            <span>{{ job.introduction }}</span>
+                        </div>
+                    </div>
+                    {% endif %}
+				{% endfor %}
+                <a href="{{ url_for('myhome2') }}">完善或修改公司信息</a>
+				<a href="{{ url_for('newjob') }}">新增招聘信息</a>
+		</section>
+	</section>
+{% endblock %}
+
+{% block height_control %}{% endblock %}

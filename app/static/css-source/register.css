@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+
+#register {
+	background-color: #fff;
+	padding-top:40px;
+	padding-bottom:50px;
+	margin-top:50px;
+	margin-bottom:30px;
+}
+#choose-register {
+	margin-bottom: 20px;
+}
+#choose-register > a {
+	color:#333;
+	font-size: 14px;
+	padding:0;
+	text-decoration: none;
+}
+#choose-register > a:hover {
+	color:#111;
+}
+#choose-register > a:nth-child(1) {
+	margin-right: 10px !important;
+}
+#choose-register > a:nth-child(2) {
+	margin-left: 10px !important; 
+}
+#type1, #type2 {
+	padding:7px 11px;
+}
+.on {
+	background-color:#ADDCBC;
+}
+.off:hover {
+	transition: 0.2s;
+	background-color:#ADDCBC;
+}
+#form1, #form2 {
+	margin-top:50px;
+}
+#form1 > div, #form2 > div {
+	margin-top:9px;
+	margin-bottom:9px;
+	font-size: 16px;
+}
+#form1 button, #form2 button, #submit {
+	color:#555;
+	border: #bbb 1px solid;
+}
+#form1 button:hover, #form2 button:hover, #submit:hover {
+	transition: 0.2s;
+	background-color:darkgrey;
+	color:#eee;
+}
+#form1 button:active, #form2 button:active, #submit:active {
+	transition: 0s;
+	background-color: darkgray;
+}
+#bg {
+	position: absolute;
+	left:-250px;
+	bottom:-30px;
+	z-index: 999;
+}
+#form2 > p {
+	font-weight: 600;
+	font-size: 14px;
+}
+#register {
+	border-top:1px solid #76A476;
+	border-bottom:1px solid #76A476;
+	height: 580px;
+}
+input {
+	float: right;
+}
+form {
+	width:300px;
+}

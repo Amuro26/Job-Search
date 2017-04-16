@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+
+#login {
+	background-image: url(../image-source/login/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	padding-top:20px;
+	padding-bottom: 100px;
+}
+#login > section {
+	clear:both;
+}
+#login > img {
+	position:absolute;
+}
+#wrapper  {
+	border: #002F1B dashed thick;
+	border-radius: 7px;
+	width: 480px !important;
+	margin: 200px auto 0 auto;
+	height: 200px;
+}
+#wrapper > section {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 400px;
+	margin: 0 auto;
+}
+#wrapper > section > div {
+	padding-top:10px;
+}
+#wrapper > section > div > a {
+	color:#333;
+	font-size: 14px;
+	padding:0;
+	margin-left: -1px !important; 
+	margin-right: -1px !important;
+}
+#wrapper > section > div > a:hover {
+	text-decoration: none;
+}
+.on {
+	background-color:#002F1B;
+	color: #eee;
+	padding-left: 6px !important;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border:#002F1B 3px solid;
+	
+}
+.on:hover {
+	background-color:#004F2D;
+	border:#004F2D 3px solid;
+	color: #fff;
+}
+.off {
+	padding-left: 6px !important;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border:#F8EED3 3px solid;
+	text-decoration: none !important;
+}
+.off:hover {
+	border:#007442 3px solid;
+	color: #555;
+}
+form {
+	padding-top:60px;
+}
+form > div{
+	margin-top:7px;
+	margin-bottom:7px;
+}
+#wrapper > section:nth-child(2) {
+	border-left: #416F47 4px dotted;
+}
+#wrapper > section:nth-child(2) > p {
+	margin-bottom: 2px;
+}
+#wrapper > section:nth-child(2) > img {
+	margin: 0 10%;
+}
+.col-xs-8 > a, .col-xs-8 > button {
+	transition: 0.2s;
+	color:#555;
+	border: #bbb 1px solid;
+}
+.col-xs-8 > a:hover, .col-xs-8 > button:hover {
+	transition: 0.2s;
+	background-color:darkgrey;
+	color:#eee;
+}
+.col-xs-8 > a:active, .col-xs-8 > button:active {
+	transition: 0s;
+	background-color: darkgray;
+}
+/*footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0px;
+}*/

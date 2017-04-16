@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}修改个人信息{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/myhome1.css" rel="stylesheet" type="text/css">  <!--个人主页css文件-->
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+{% block content %}
+
+	<!--主面板-->
+	<section class="col-sm-9" id="main">
+		<section class="col-sm-3" id="image">
+            {% if current_user.avatar %}
+			<img src="{{ current_user.avatar }}" width="100%" />
+            {% else %}
+            <img src="../static/avatar/default.jpg">
+            {% endif %}
+		</section>
+		<section class="col-sm-9" id="data">
+			<p id="title">我的信息</p>
+			<mark id="complement">完整填写信息，更易找到工作</mark>
+			<form action="{{ url_for('myhome1')}}" method="post" enctype="multipart/form-data">
+				{{ form.hidden_tag() }}
+				<p class="subtitle">账号信息</p>
+					<div>
+						<div>
+							<span>用户名：</span>
+							<span>{{ current_user.username }}</span>
+						</div>
+						<div>
+							<span>修改密码：</span>
+							{{ form.password(type="password") }}
+						</div>
+                        <div>
+							<span>确认密码：</span>
+							{{ form.re_password(type="password") }}
+						</div>
+						<div>
+							<span>上传头像：</span>
+							{{ form.avatar }}
+						</div>
+					</div>
+				<p class="subtitle">基本信息</p>
+					<div>
+						<div>
+							<span>年龄：</span>
+							{{ form.age(type="number") }}
+						</div>
+						<div>
+							<span>手机号码：</span>
+							{{ form.phone(type="text") }}
+						</div>
+						<div>
+							<span>邮箱：</span>
+							{{ form.email(type="email") }}
+						</div>
+					</div>
+				<p class="subtitle">教育背景</p>
+					<div>
+						<div>
+							{{ form.education }}
+						</div>
+					</div>
+				<p class="subtitle">实习经历</p>
+					<div>
+						<div>
+							{{ form.working_experience }}
+						</div>
+					</div>
+                <p class="subtitle">自我陈述</p>
+					<div>
+						<div>
+							{{ form.about_me }}
+						</div>
+					</div>
+				{{ form.submit }}
+				<input type="reset" value="重置">
+			</form>
+		</section>
+	</section>
+{% endblock %}
+	
+{% block height_control %}{% endblock %}

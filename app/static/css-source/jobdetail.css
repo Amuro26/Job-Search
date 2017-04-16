@@ -1,0 +1,124 @@
+@charset "utf-8";
+/* CSS Document */
+
+#keyword, .col-sm-9 {
+	margin-left: 12%;
+	background-color: #FFFFFF;
+}
+.title {
+	font-size: 32px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+.title > div {
+	padding-left: 70px;
+	float: left;
+	position: relative;
+	top: 10px;
+}
+#keyword {
+	margin-top: 20px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+#keyword > div:nth-child(1) {
+	font-size: 17px;
+	font-weight: bold;
+	border-bottom: #bbb 1px solid;
+}
+#keyword > div:nth-child(1) > div:nth-child(1) {
+	color: red;
+}
+#keyword > div {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+#introduction {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+#introduction > div {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#introduction > div:nth-child(1), #introduction > div:nth-child(3) {
+	font-size: 24px;
+}
+#more {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+}
+#more > div:nth-child(1), #hot > div:nth-child(1) {
+	font-size: 20px;
+	border-bottom: #6BE375 3px solid;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#more > div > a > div {
+	overflow: hidden;
+}
+.subtitle {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-bottom: #6BE375 3px solid;
+	font-size: 20px;
+}
+#more > div, #hot > div {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-bottom: #bbb 1px solid;
+}
+#more > div > a, #hot > div > a {
+	color: #333;
+}
+#more > div:hover, #hot > div:hover {
+	background-color: #EEEEEE !important;
+	color: #333;
+}
+#more > div:nth-child(2n), #hot > div:nth-child(2n) {
+	background-color: #E4F3FF;
+}
+#hot {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 16px;
+}
+#hot > div > a > div {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#hot > div > a > div:nth-child(1), #hot > div > a > div:nth-child(2), #hot > div > a > div:nth-child(4), #hot > div > a > div:nth-child(5) {
+	border-right: #bbb 1px solid;
+	overflow: hidden;
+}
+section.col-sm-2 {
+	font-size: 26px;
+	position: relative;
+	top: 20px;
+	float: right !important;
+}
+
+section.col-sm-2 {
+	font-size: 26px;
+	position: relative;
+	top: 20px;
+	float: right !important;
+}
+
+section.col-sm-2 > div > a {
+	color: firebrick;
+	font-weight: bold;
+}
+section.col-sm-2 > div > a:hover {
+	color: red;
+}

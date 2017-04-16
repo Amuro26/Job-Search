@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% import "page_macro.html" as macro %}
+
+{% block title %}Job Search，打造大学生全新求职平台{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/home.css" rel="stylesheet" type="text/css">  <!--主页css文件-->
+{% endblock %}
+
+
+{% block content %}
+	<!--导航栏-->
+	<nav id="navbar" class="col-sm-1 text-center">
+		<div><a href="#header">回到顶部</a></div>
+		<div><br /></div>
+		<div><a href="#recommend">为你推荐</a></div>
+		<div><a href="#category">所有岗位</a></div>
+		<div><a href="#morelink">更多链接</a></div>
+	</nav>
+	
+
+	<!--为你推荐-->
+	<section id="recommend" class="data col-sm-9">
+		<div><p>为你推荐</p></div>
+		<section class="container-fluid">
+			{% for job in recommend %}
+			<a href="/job_detail/{{ job.id }}">
+				<div class="col-sm-4">
+					<dl>
+						<dt><img src="{{ job.avatar }}" height="80"/></dt>
+						<div class="col-sm-8 text-center">{{ job.job_name }}</div>
+						<dd class="text-center col-sm-12"><div>薪水： {{ job.salary }}</div></dd>
+					</dl>
+				</div>
+			</a>
+			{% endfor %}
+		</section>
+	</section>
+	
+	<!--热门岗位-->
+	<section id="hot" class="data col-sm-9">
+		<div><p>所有岗位</p></div>
+		<section class="container-fluid" style="height: 310px">
+			{% for job in jobs %}  <!--按时间排序-->
+			<a href="/job_detail/{{ job.id }}">
+				<div class="col-sm-4">
+					<dl>
+						<dt><img src="{{ job.avatar }}" height="80"/></dt>
+						<div class="col-sm-8 text-center">{{ job.job_name }}</div>
+						<dd class="text-center col-sm-12"><div>薪水： {{ job.salary }}</div></dd>
+					</dl>
+				</div>
+			</a>
+			{% endfor %}
+
+		</section>
+            <div class="pagination col-sm-4 col-sm-offset-4" style="">
+                {{ macro.pagination_widget(pagination, 'home') }}
+            </div>
+	</section>
+	
+	<!--分类信息-->
+    <!--
+	<section id="category" class="data col-sm-9">
+		<div><p>分类信息</p></div>
+
+		<div class="col-sm-12 detail">
+			<div class="col-sm-3">
+				<p class="title text-center">行业1</p>
+				<a class="btn-default" href="url_for('key_words', key_words="")">
+					<div class="sub col-sm-6"><dl><dd>部门1</dd></dl></div>
+				</a>
+				<a class="btn-default" href="url_for('key_words', key_words="")">
+					<div class="sub col-sm-6"><dl><dd>部门2</dd></dl></div>
+				</a>
+				<a class="btn-default" href="url_for('key_words', key_words="")">
+					<div class="sub col-sm-6"><dl><dd>部门3</dd></dl></div>
+				</a>
+				<a class="btn-default" href="url_for('key_words', key_words="")">
+					<div class="sub col-sm-6"><dl><dd>部门4</dd></dl></div>
+				</a>
+				<a class="btn-default more" href="url_for('key_words')">
+					<div class="text-center col-sm-12">
+						<p>查看更多</p>
+					</div>
+				</a>
+			</div>
+			<div class="col-sm-8">
+				{# {% for job in jobs and job.industry == industry %}  #}
+				<a href="">
+					<div class="col-sm-6">
+						<dl>
+							<dt><img src="url_for('company_logo', company_name=company.company_name)" height="80"/></dt>
+							<div class="col-sm-6 col-sm-offset-1 text-center">职务名称</div>
+							<dd class="text-center col-sm-12"><div>月薪</div></dd>
+						</dl>
+					</div>
+				</a>
+
+			</div>
+		</div>
+
+	</section>
+	-->
+	<!--更多链接-->
+	<section id="morelink" class="data col-sm-9">
+		<div><p>更多链接</p></div>
+		<div class="col-sm-10 col-sm-offset-1">
+			<div class="col-sm-4">
+				<a href=" ">中华英才网<br /></a>
+				<a href="http://www.51job.com/">前程无忧<br /></a>
+				<a href="https://www.zhaopin.com/">智联招聘<br /></a>
+			</div>
+			<div class="col-sm-4">
+				<a href="http://www.58.com/zhaopin/">58同城<br /></a>
+				<a href="http://www.ganji.com/zhaopin/">赶集网<br /></a>
+				<a href="http://www.cjol.com/">中国人才热线<br /></a>
+			</div>
+			<div class="col-sm-4">
+				<a href="https://www.liepin.com/">猎聘网<br /></a>
+				<a href="http://www.yingjiesheng.com/">应届生<br /></a>
+				<a href="https://www.dajie.com/">大街网<br /></a>
+			</div>
+		</div>
+	</section>
+	
+	<!--一段介绍-->
+	<article id="introduction" class="col-sm-9 text-center">
+		JOB SEARCH，专注于招聘信息的发布与交流，希望能为您的职业发展之路提供便利。
+	</article>
+	
+{% endblock %}
+	
+{% block heightcontrol %}{% endblock %}
+

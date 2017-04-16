@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+#success {
+	margin-top: 30px;
+	margin-bottom: 102px;
+	padding-top:70px;
+	padding-bottom:70px;
+	background-image: url(../image-source/success/border.jpg);
+	background-size: 100% 100%;
+}
+h4 {
+	margin-top:20px !important;
+	margin-bottom: 80px !important;
+}
+#choice > a > button {
+	color:#555;
+	border: #bbb 1px solid;
+	margin-left: 10px;
+	margin-right: 10px;
+	height:40px;
+	width:17%;
+}
+#choice > a > button:hover {
+	transition: 0.2s;
+	background-color:darkgrey;
+	color:#eee;
+}
+#choice > a > button:active {
+	transition: 0s;
+	background-color: darkgray;
+}

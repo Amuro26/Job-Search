@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Job Search，打造大学生全新求职平台{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/index.css" rel="stylesheet" type="text/css">  <!--欢迎页css文件-->
+{% endblock %}
+{% block style %}
+<style>
+	body {
+		font-family:"微软雅黑";
+	}
+	p {
+		margin: 0;
+	}
+</style>
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+{% block content %}
+	<section id="main" class="text-center">
+		<h1 id="slogan">Job Search， 一个更好的求职平台</h1>
+		<form action="search.html" method="post">
+			{{ search_form.hidden_tag() }}
+			{{ search_form.key_words(type="text", class="form-control-static", placeholder=" 关键词") }}
+			<input type="submit" value="Search" class="btn">
+		</form>
+		<div><a class="btn" href="{{ url_for('home') }}">进入主页</a></div>
+		
+	</section>
+{% endblock %}
+
+{% block height %}687{% endblock %}

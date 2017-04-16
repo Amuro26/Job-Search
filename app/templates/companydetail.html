@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ company.conpany_name }}{% endblock %}
+
+{% block morelink %}
+<link href="css-source/companydetail.css" rel="stylesheet" type="text/css">  <!--公司介绍页面css文件-->
+{% endblock %}
+
+{% block classtitle %}
+	<!--logo、公司名称-->
+	<section class="col-sm-9 title">
+		<img href="url_for('company_logo', company_name=company.company_name)"/>
+		<div>{{ company.company_name }}</div>
+	</section>
+{% endblock %}
+
+{% block content %}
+	
+	
+	<!--公司关键词-->
+	<section id="keyword" class="col-sm-9">
+		<div class="col-sm-10">
+			<div class="col-sm-4"><span id="industry">{{ company.industry }}</span></div>
+			<div class="col-sm-4"><span id="type">{{ company.company_公司性质 }}</span></div>
+			<div class="col-sm-4"><span id="year">{{ company.company_成立年份 }}</span></div>
+		</div>
+		<div class="col-sm-12">
+			<span>公司地点：</span>
+			<span id="company-location">{{ company.address }}</span>
+		</div>
+		<div class="col-sm-12">
+			<span>联系人：</span>
+			<span id="company-hr">{{ company.contact }}</span>
+		</div>
+	</section>
+	
+	<!--公司介绍-->
+	<section class="col-sm-9" id="introduction">
+		<div class="col-sm-12"><p>公司介绍</p></div>
+		<div class="col-sm-12">
+			<p>{{ company.introduction }}</p>
+		</div>
+	</section>
+	
+	<!--该公司所有职务-->
+	<section class="col-sm-9" id="more">
+		<div class="col-sm-12"><p>该公司所有职务</p></div>
+		{% for job in company %}
+		<div class="col-sm-12">
+			<div class="col-sm-4"><span class="job-name">{{ job.job_name }}</span></div>
+			<div class="col-sm-3"><span class="salary">{{ job.salary }}</span></div>
+			<div class="col-sm-5"><span class="more">{{ job.福利待遇 }}</span></div>
+		</div>
+		{% endif %}
+	</section>
+{% endblock %}
+
+
+{% block height_control %}{% endblock %}

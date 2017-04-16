@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}注册成功！{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/success1.css" rel="stylesheet" type="text/css">  <!--个人注册成功页面css文件-->
+{% endblock %}
+
+
+{% block header %}
+<!--头部返回主页-->
+	<header class="container-fluid"> 
+		<div>
+			<span>&nbsp;</span>
+		</div>
+	</header>
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+{% block content %}
+<!--注册成功信息-->
+	<section class="col-sm-8 col-sm-offset-2 text-center" id="success">
+		<h1>恭喜您，发布招聘信息成功！</h1>
+		<h4>您可以返回主页，或者继续发布信息。</h4>
+		<div id="choice">
+			<a href="{{ url_for('home') }}"><button class="btn btn-default">返回主页</button></a>
+			<a href="{{ url_for('newjob') }}"><button class="btn btn-default">继续发布</button></a>
+		</div>
+	</section>
+{% endblock %}
+
+{% block height %}500{% endblock %}
+
+

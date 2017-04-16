@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* CSS Document */
+
+#short, #main, .title {
+	margin-left: 12%;
+	background-color: #FFFFFF;
+}
+.title {
+	font-size: 32px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+.title > img {
+	float: left;
+}
+.title > div {
+	padding-left: 70px;
+	float: left;
+	position: relative;
+	top: 10px;
+}
+#short {
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: #6BE375 3px solid;
+}
+#notice {
+	width:80%;
+	float:left;
+}
+#back {
+	float:right;
+}
+#back > a {
+	color: #555555;
+}
+#back > a:hover {
+	color: #000000;
+}
+#main {
+	padding-bottom: 20px;
+	margin-bottom: 50px;
+}
+.message-in-it {
+	border-bottom: #AAAAAA 1px solid;
+}
+.message-in-it {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.message-in-it > section > button {
+	float:right;
+}
+.message-in-it > section > p {
+	font-size: 22px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

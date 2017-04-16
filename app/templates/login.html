@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}登录{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/login.css" rel="stylesheet" type="text/css">  <!--登录页面css文件-->
+{% endblock %}
+
+
+
+{% block header %}
+<!--头部返回主页-->
+	<header class="container-fluid"> 
+		<div>
+			<a href="{{ url_for('home') }}"><span>返回主页</span></a>
+		</div>
+	</header>
+{% endblock %}
+
+{% block classtitle %}{% endblock %}
+
+{% block content %}
+<!--登录对话框-->
+	<section class="col-sm-12" id="login">
+		<section class="" id="wrapper">
+			<section class="col-sm-10 col-sm-offset-1">
+				<div class="col-sm-12">
+					<a class="btn btn-link col-sm-6"><div class="on" id="type1">求职者登录</div></a>
+			  	  	<a class="btn btn-link col-sm-6"><div class="off" id="type2">企业用户登录</div></a>
+				</div>
+				<form id="1login" style="display: block" action="{{ url_for('login') }}" method="post">
+					{{ user_form.hidden_tag() }}
+					<div class="container-fluid">
+						<span>邮箱：</span>
+						{{ user_form.email(type="email") }}
+					</div>
+					<div class="container-fluid">
+						<span>密码：</span>
+						{{ user_form.password(type="password") }}
+					</div>
+					<div class="col-xs-8">
+						{{ user_form.submit_user(class="btn btn-default") }}
+						<a class="btn btn-default" href="{{ url_for('register') }}">立即注册</a>
+								<!--这里可以考虑加一点判断，个人和企业跳转之后显示的注册界面不同-->
+					</div>
+				</form>
+				<form id="2login" style="display: none" action="{{ url_for('login') }}" method="post">
+					{{ company_form.hidden_tag() }}
+					<div class="container-fluid">
+						<span>邮箱：</span>
+						{{ company_form.email(type="text") }}
+					</div>
+					<div class="container-fluid">
+						<span>密码：</span>
+						{{ company_form.password(type="password") }}
+					</div>
+					<div class="col-xs-8">
+						{{ company_form.submit_company(class="btn btn-default" ) }}
+						<a class="btn btn-default" href="{{ url_for('register') }}">立即注册</a>
+								<!--这里可以考虑加一点判断，个人和企业跳转之后显示的注册界面不同-->
+					</div>
+					
+				</form>
+			</section>
+			<!--<section class="col-sm-5">
+				<p class="text-center">手机扫码登录</p>
+				<img src="../static/image-source/index/qrcode-ycq.jpg" width="80%" alt=""/>
+			</section>-->
+		</section>
+	</section>	
+{% endblock %}
+
+{% block script %}
+$("#type2").on("click",function(){
+	$("#type1").addClass("off").removeClass("on");
+	$("#type2").addClass("on").removeClass("off");
+	$("#1login").hide();
+	$("#2login").show();
+})
+$("#type1").on("click",function(){
+	$("#type2").addClass("off").removeClass("on");
+	$("#type1").addClass("on").removeClass("off");
+	$("#2login").hide();
+	$("#1login").show();
+})
+{% endblock %}
+
+{% block height %}729{% endblock %}

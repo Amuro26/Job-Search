@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}个人信息{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/showinfo1.css" rel="stylesheet" type="text/css">  <!--个人主页css文件-->
+{% endblock %}
+
+
+{% block content %}
+	<!--主面板-->
+	<section class="col-sm-9" id="main">
+		<section class="col-sm-3" id="image">
+            {% if user.avatar %}
+			<img src="{{ user.avatar }}" width="100%" />
+            {% else %}
+            <img src="../static/avatar/default.jpg">
+            {% endif %}
+		</section>
+		<section class="col-sm-9" id="data">
+			<p id="title">我的信息</p>
+			<mark id="complement">完整填写信息，更易找到工作</mark>
+			<p class="subtitle">账号信息</p>
+			<div>
+				<div>
+					<span>用户名：</span>
+					<span>{{ user.username }}</span>
+				</div>
+			</div>
+			<p class="subtitle">基本信息</p>
+			<div>
+				<div>
+					<span>年龄：</span>
+					<span>{{ user.age }}</span>
+				</div>
+				<div>
+					<span>手机号码：</span>
+					<span>{{ user.phone }}</span>
+				</div>
+				<div>
+					<span>邮箱：</span>
+					<span>{{ user.email }}</span>
+				</div>
+			</div>
+			<p class="subtitle">教育背景</p>
+			<div>
+				<div>
+					<span>{{ user.education }}</span>
+				</div>
+			</div>
+			<p class="subtitle">实习经历</p>
+			<div>
+				<div>
+					<span>{{ user.working_experience }}</span>
+				</div>
+			</div>
+            <p class="subtitle">自我陈述</p>
+			<div>
+				<div>
+					<span>{{ user.about_me }}</span>
+				</div>
+			</div>
+            <a class="url" href="{{ url_for('myhome1') }}">点此完善个人信息</a>
+			<a class="url" href="{{ url_for('newjob') }}">点此发布招聘信息</a>
+		</section>
+	</section>
+{% endblock %}
+
+{% block height_control %}{% endblock %}

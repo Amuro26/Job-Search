@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main, .title {
+	margin: 0 12%;
+	background-color: white;
+}
+.title {
+	font-size: 32px;
+	margin-top: 50px;
+	margin-bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	line-height: 50px;
+	vertical-align: middle;
+}
+.title > img {
+	float: left;
+}
+.title > div {
+	padding-left: 70px;
+	float: left;
+	position: relative;
+	top: 10px;
+}
+#main {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+#complement {
+	position:absolute;
+	right:10%;
+	top:50px;
+}
+#image {
+	padding-top:50px;
+}
+#data {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-left: #AAAAAA 1px dashed;
+}
+#data > #title {
+	font-size: 28px;
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.subtitle {
+	margin-top: 20px;
+	font-size: 22px;
+	padding-left: 20px;
+	margin-bottom: 3px;
+	border-bottom: #6BE375 3px solid;
+}
+form > div {
+	margin-bottom: 20px;
+}
+form > div > div {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+}
+form > button, .job-data > button, #submit {
+	transition: 0.5s;
+	color:#555 !important;
+	border: #bbb 1px solid !important;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+form > button:hover, .job-data > button:hover, #submit:hover {
+	transition: 0.5s;
+	background-color:darkgrey !important;
+	color:#eee !important;
+}
+form > button:active, .job-data > button:active, #submit:active {
+	transition: 0s !important;
+	background-color: darkgray !important;
+}
+.job-data {
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.job-data > div{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.job-data > div:nth-child(1) {
+	font-weight: bold;
+}
+.job-data > div:nth-child(1) > div:nth-child(2) {
+	color: red;
+}
+.job-data > div:nth-child(1) > div:nth-child(1), .job-data > div:nth-child(2) > div:nth-child(1), .job-data > div:nth-child(2) > div:nth-child(2) {
+	border-right: #bbb 1px solid;
+}
+.job-data > button {
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+textarea {
+	width: 99%;
+	height: 150px;
+}
+#data form > div > div {
+	float: none !important;
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+#data div > div > div {
+	float: left;
+}
+input {
+	float: right;
+}
+input#submit{
+	float:none;
+}
+#logo{
+	float: left;
+}

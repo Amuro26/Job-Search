@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+footer{
+	background-color:currentColor;
+}
+#copyright {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#copyright p {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-left: 18%;
+	color:darkgrey;
+}
+#qrcode span {
+	color:darkgrey;
+	margin-left: 20%;
+	margin-right: 4%;
+}
+#qrcode img {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}

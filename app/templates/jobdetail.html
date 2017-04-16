@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}{{ job.job_name }} - {{ job.company_name }}{% endblock %}
+
+{% block morelink %}
+<link href="../static/css-source/jobdetail.css" rel="stylesheet" type="text/css">  <!--求职细节页面css文件-->
+{% endblock %}
+
+{% block header %}
+    <!--头部登录、注册栏-->
+	<header class="container-fluid" id="header">
+		{% if current_user.username %}
+		<div>
+            <span><a href="/user/{{ current_user.email }}">{{ current_user.username }}</a></span>
+			<span><a href="{{ url_for('logout')}}">登出</a></span>
+		</div>
+		{% elif current_user.company_name %}
+        <div>
+			<span><a href="/company/{{ current_user.email }}">{{ current_user.username }}</a></span>
+			<span><a href="{{ url_for('logout')}}">登出</a></span>
+		</div>
+        {% else %}
+		<div>
+			<span><a href="{{ url_for('register') }}">注册</a></span>
+			<span><a href="{{ url_for('login') }}">登录</a></span>
+		</div>
+		{% endif %}
+	</header>
+	<!--logo、搜索框-->
+	<section class="col-sm-9 title">
+		<img src="{{ job.avatar }}" height="60" style="float: left; margin-right: 30px;"/>
+		<div>
+			<span id="company-name">{{ job.company_name }}</span>
+			<span>：</span>
+			<span id="job-name">{{ job.job_name }}</span>
+		</div>
+	</section>
+{% endblock %}
+
+{% block content %}
+	
+	<!--职务关键词-->
+	<section id="keyword" class="col-sm-9">
+		<div class="col-sm-6">
+			<div class="col-sm-8 text-center"><span id="salary">薪水： {{ job.salary }}</span></div>
+			<div class="col-sm-4"><span id="industry">所属行业： {{ job.industry }}</span></div>
+		</div>
+		<section class="col-sm-2">
+			<div><a href="mailto:{{ job.email }}">立即申请</a></div>
+		</section>
+		<div class="col-sm-12">
+			<span>工作地点：</span>
+			<span id="company-location">{{ job.work_place }}</span>
+		</div>
+		<div class="col-sm-12">
+			<span>联系方式：</span>
+			<span id="company-hr">{{ job.eamil }}</span>
+		</div>
+	</section>
+	
+
+	<!--职务介绍-->
+	<section class="col-sm-9" id="introduction">
+		<div class="col-sm-12"><p>职务介绍</p></div>
+		<div class="col-sm-12">
+			<p>{{ job.job_detail }}</p>
+		</div>
+        <div class="col-sm-12"><p>工作要求</p></div>
+		<div class="col-sm-12">
+			<p>{{ job.requirement }}</p>
+		</div>
+	</section>
+
+	<!--该公司其他职务-->
+    {% if company_job %}
+	<section class="col-sm-9" id="more">
+		<div class="col-sm-12"><p>该公司其他职务</p></div>
+		{% for job in company_job %}
+		<div class="col-sm-12">
+			<div class="col-sm-4"><span class="job-name">{{ job.job_name }}</span></div>
+			<div class="col-sm-4"><span class="salary">{{ job.salary }}</span></div>
+			<div class="col-sm-3"><span class="more">{{ job.PS }}</span></div>
+		</div>
+		{% endfor %}
+	</section>
+    {% endif %}
+	
+	<!--大家都在看-->
+	<section class="col-sm-9" id="hot">
+		<div class="col-sm-12"><p>大家都在看</p></div>
+		{% for job in jobs %}
+		<div class="col-sm-12">
+        <a href="/job_detail/{{ job.id }}">
+			<div class="col-sm-4"><span class="job-name">{{ job.job_name }}</span></div>
+			<div class="col-sm-4"><span class="salary">{{ job.salary }}</span></div>
+			<div class="col-sm-4"><span class="company">{{ job.company_name }}</span></div>
+			<div class="col-sm-3"><span class="requirement">{{ job.requirement }}</span></div>
+			<div class="col-sm-2"><span class="industry">{{ job.industry }}</span></div>
+			<div class="col-sm-7"><span class="welfare">{{ job.welfare }}</span></div>
+        </a>
+		</div>
+		{% endfor %}
+	</section>
+{% endblock %}
+
+
+{% block height_control %}{% endblock %}
